@@ -2,11 +2,17 @@
 
 #include "ofMain.h"
 #include "StopMotionController.h"
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp
 {
-    StopMotionController mAnimation;
-    float mLevel;
+    shared_ptr<StopMotionController> mAnimation;
+    
+    ofxPanel mGui;
+    ofParameterGroup mParams;
+    ofParameter<float> mLevel;
+    ofParameter<float> mGain;
+    ofParameter<float> mDecay;
     
 public:
     void setup();
